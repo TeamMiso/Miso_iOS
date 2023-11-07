@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SUITv1-Bold.otf</string>
+		<string>SUITv1-ExtraBold.otf</string>
+		<string>SUITv1-ExtraLight.otf</string>
+		<string>SUITv1-Heavy.otf</string>
+		<string>SUITv1-Light.otf</string>
+		<string>SUITv1-Medium.otf</string>
+		<string>SUITv1-Regular.otf</string>
+		<string>SUITv1-SemiBold.otf</string>
+		<string>SUITv1-Thin.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

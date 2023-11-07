@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Miso
-//
-//  Created by 박준서 on 10/12/23.
-//
-
 import UIKit
 
 @main
