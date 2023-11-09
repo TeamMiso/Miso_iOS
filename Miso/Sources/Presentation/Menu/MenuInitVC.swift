@@ -11,17 +11,17 @@ class MenuInitVC: UIViewController {
     var subTitle = ""
     var explainTitle = ""
     
-    init(mainImageName: String = "", subImageName: String = "", mainTitle: String = "", subTitle: String = "", explainTitle: String = "") {
-        self.mainImageName = mainImageName
-        self.subImageName = subImageName
-        self.mainTitle = mainTitle
-        self.subTitle = subTitle
-        self.explainTitle = explainTitle
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    init(mainImageName: String = "", subImageName: String = "", mainTitle: String = "", subTitle: String = "", explainTitle: String = "") {
+//        self.mainImageName = mainImageName
+//        self.subImageName = subImageName
+//        self.mainTitle = mainTitle
+//        self.subTitle = subTitle
+//        self.explainTitle = explainTitle
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     private let contentView = UIView().then {
         $0.backgroundColor = UIColor(rgb: 0x81A895)
@@ -61,9 +61,12 @@ class MenuInitVC: UIViewController {
         setup()
         addView()
         setLayout()
+        
+        
     }
     
     func setup() {
+        
         
         self.view.frame = contentView.frame
         
