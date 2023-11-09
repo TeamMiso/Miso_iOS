@@ -1,6 +1,6 @@
 import UIKit
 
-final class SigninVC: BaseVC {
+final class SignupVC: BaseVC {
     
     private let backgroundImageView = UIImageView().then {
         $0.image = UIImage(named: "SigninBackground")
