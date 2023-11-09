@@ -3,7 +3,7 @@ import UIKit
 final class SignupVC: BaseVC {
     
     private let backgroundImageView = UIImageView().then {
-        $0.image = UIImage(named: "SigninBackground")
+        $0.image = UIImage(named: "SignupBackground")
     }
     
     private let backgroundView = UIView().then {
@@ -55,7 +55,7 @@ final class SignupVC: BaseVC {
     override func addView() {
         view.addSubviews(
             backgroundImageView,
-            backgroundView,
+//            backgroundView,
             vcNameLabel
 //            ,
 //            emailLabel,
