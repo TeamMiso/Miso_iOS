@@ -56,12 +56,13 @@ final class SigninVC: BaseVC {
         view.addSubviews(
             backgroundImageView,
             backgroundView,
-            vcNameLabel,
-            emailLabel,
-            emailView,
-            emailImageView,
-            betweenView,
-            emailTextfield
+            vcNameLabel
+//            ,
+//            emailLabel,
+//            emailView,
+//            emailImageView,
+//            betweenView,
+//            emailTextfield
         )
         
     }
@@ -78,9 +79,9 @@ final class SigninVC: BaseVC {
             $0.top.equalTo(self.backgroundView.snp.top).offset(35)
             $0.centerX.equalToSuperview()
         }
-        emailLabel.snp.makeConstraints {
-            
-        }
+//        emailLabel.snp.makeConstraints {
+//            
+//        }
     }
     
 }
