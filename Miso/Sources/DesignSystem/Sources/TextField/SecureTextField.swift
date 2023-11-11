@@ -15,11 +15,9 @@ public final class SecureTextField: UITextField {
     }
     
     func setupView() {
-        borderStyle = .roundedRect
-        layer.cornerRadius = 10
-        backgroundColor = UIColor(rgb: 0xF1F1F5)
-        font = .Miso(size: 14, family: .regular)
-        setPlaceholderColor(UIColor(rgb: 0x999999))
+        backgroundColor = UIColor(rgb: 0xFAFAFA)
+        font = .Miso(size: 13, family: .extraLight)
+        setPlaceholderColor(UIColor(rgb: 0x808080))
         
         isSecureTextEntry = true
         setPasswordToggleButtonImage()
@@ -36,6 +34,7 @@ public final class SecureTextField: UITextField {
         buttonConfiguration.baseBackgroundColor = .clear
         
         passwordToggleButton.setImage (UIImage (systemName: "eye")?.withTintColor(UIColor(rgb: 0x999999), renderingMode: .alwaysOriginal), for: .normal)
+        
         passwordToggleButton.setImage(UIImage(systemName: "eye.slash")?.withTintColor(UIColor(rgb: 0x999999), renderingMode: .alwaysOriginal), for: .selected)
         
         passwordToggleButton.configuration = buttonConfiguration
