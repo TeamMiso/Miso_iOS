@@ -26,7 +26,7 @@ final class SignupVC: BaseVC {
         $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    private let emailTextfield = NormalTextField(placeholder: "Email").then {
+    private let emailTextfield = NormalTextField(placeholder: "  이메일을 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
@@ -39,7 +39,7 @@ final class SignupVC: BaseVC {
         $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    private let passwordTextfield = SecureTextField(placeholder: "Password").then {
+    private let passwordTextfield = SecureTextField(placeholder: "  비밀번호를 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
@@ -52,10 +52,29 @@ final class SignupVC: BaseVC {
         $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    private let rePasswordTextfield = SecureTextField(placeholder: "RePassword").then {
+    private let rePasswordTextfield = SecureTextField(placeholder: "  비밀번호를 다시 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
+    }
+    
+    private let getAuthNumberButton = NextStepButton().then {
+        $0.setTitle("인증번호받기", for: .normal)
+        $0.isEnabled = false
+        
+//        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    private let accountAskLabel = UILabel().then {
+        $0.text = "계정이 있으신가요?"
+        $0.textColor = UIColor(rgb: 0x808080)
+        $0.font = .Miso(size: 12, family: .extraLight)
+    }
+    
+    private let gotoLoginButton = UIButton().then {
+        $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.font = .Miso(size: 12, family: .light)
+        $0.setTitleColor(UIColor(rgb: 0x81A895), for: .normal)
     }
     
     override func viewDidLoad() {
@@ -81,7 +100,11 @@ final class SignupVC: BaseVC {
             passwordTextfield,
             
             rePasswordLabel,
-            rePasswordTextfield
+            rePasswordTextfield,
+            
+            getAuthNumberButton,
+            accountAskLabel,
+            gotoLoginButton
         )
         
     }
@@ -125,11 +148,50 @@ final class SignupVC: BaseVC {
             $0.top.equalTo(rePasswordLabel.snp.bottom).offset(4)
             $0.leading.trailing.equalToSuperview().inset(32)
         }
+        getAuthNumberButton.snp.makeConstraints {
+            $0.height.equalTo(55)
+            $0.top.equalTo(rePasswordTextfield.snp.bottom).offset(40)
+            $0.leading.trailing.equalToSuperview().inset(32)
+        }
+        accountAskLabel.snp.makeConstraints {
+            $0.top.equalTo(getAuthNumberButton.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(116)
+        }
+        gotoLoginButton.snp.makeConstraints {
+            $0.height.equalTo(15)
+            $0.top.equalTo(accountAskLabel.snp.top)
+            $0.leading.equalTo(accountAskLabel.snp.trailing).offset(4)
+        }
     }
     
 }
 
 extension SignupVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == emailTextfield {
+            emailTextfield.layer.borderColor = UIColor(rgb: 0x4C53FF).cgColor
+            emailTextfield.layer.borderWidth = 1
+        } else if textField == passwordTextfield {
+            passwordTextfield.layer.borderColor = UIColor(rgb: 0x4C53FF).cgColor
+            passwordTextfield.layer.borderWidth = 1
+        } else {
+            rePasswordTextfield.layer.borderColor = UIColor(rgb: 0x4C53FF).cgColor
+            rePasswordTextfield.layer.borderWidth = 1
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextfield {
+            emailTextfield.layer.borderWidth = 0
+        } else if textField == passwordTextfield {
+            passwordTextfield.layer.borderWidth = 0
+        } else {
+            rePasswordTextfield.layer.borderWidth = 0
+        }
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
