@@ -8,6 +8,7 @@ class BaseVC: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         setup()
         setupBackgroundIfNotSet()

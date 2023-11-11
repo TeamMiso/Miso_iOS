@@ -22,7 +22,7 @@ public final class NormalTextField: UITextField{
         let lockImageView = UIImageView(image: UIImage(named: "Mail"))
         
         leftView = lockImageView
-        leftViewMode = .whileEditing
+        leftViewMode = .unlessEditing
     }
     
 }
