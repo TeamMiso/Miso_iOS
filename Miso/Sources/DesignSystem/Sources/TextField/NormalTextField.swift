@@ -12,10 +12,17 @@ public final class NormalTextField: UITextField{
         super.init(coder: coder)
     }
     
+    
+
     func setupView() {
         backgroundColor = UIColor(rgb: 0xFAFAFA)
         font = .Miso(size: 13, family: .extraLight)
         setPlaceholderColor(UIColor(rgb: 0x808080))
+        
+        let lockImageView = UIImageView(image: UIImage(named: "Mail"))
+        
+        leftView = lockImageView
+        leftViewMode = .whileEditing
     }
     
 }

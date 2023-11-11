@@ -34,6 +34,7 @@ public final class SecureTextField: UITextField {
         buttonConfiguration.baseBackgroundColor = .clear
         
         passwordToggleButton.setImage (UIImage (systemName: "eye")?.withTintColor(UIColor(rgb: 0x999999), renderingMode: .alwaysOriginal), for: .normal)
+        
         passwordToggleButton.setImage(UIImage(systemName: "eye.slash")?.withTintColor(UIColor(rgb: 0x999999), renderingMode: .alwaysOriginal), for: .selected)
         
         passwordToggleButton.configuration = buttonConfiguration

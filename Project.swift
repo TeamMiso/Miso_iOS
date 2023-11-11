@@ -58,6 +58,6 @@ let project = Project(
     ],
     fileHeaderTemplate: nil,
     additionalFiles: [],
-    resourceSynthesizers: []
+    resourceSynthesizers:  .default
 )
 

@@ -26,43 +26,62 @@ final class SignupVC: BaseVC {
         $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    private let emailView = UIView().then {
-        $0.backgroundColor = UIColor(rgb: 0xFAFAFA)
+    private let emailTextfield = NormalTextField(placeholder: "Email").then {
+        $0.layer.cornerRadius = 10
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
     }
     
-    private let emailImageView = UIImageView().then {
-        $0.image = UIImage(named: "Mail")
+    private let passwordLabel = UILabel().then {
+        $0.text = "Password"
+        $0.textColor = UIColor(rgb: 0x292929)
+        $0.textAlignment = .center
+        $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    private let betweenView = UIView().then {
-        $0.backgroundColor = UIColor(rgb: 0x999999)
+    private let passwordTextfield = SecureTextField(placeholder: "Password").then {
+        $0.layer.cornerRadius = 10
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
     }
     
-    private let emailTextfield = UITextField().then {
-        $0.placeholder = "Email"
+    private let rePasswordLabel = UILabel().then {
+        $0.text = "RePassword"
+        $0.textColor = UIColor(rgb: 0x292929)
+        $0.textAlignment = .center
+        $0.font = .Miso(size: 13, family: .extraLight)
     }
     
-    
+    private let rePasswordTextfield = SecureTextField(placeholder: "RePassword").then {
+        $0.layer.cornerRadius = 10
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func setup() {
-            
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
+        rePasswordTextfield.delegate = self
     }
     
     override func addView() {
         view.addSubviews(
             backgroundImageView,
-//            backgroundView,
-            vcNameLabel
-//            ,
-//            emailLabel,
-//            emailView,
-//            emailImageView,
-//            betweenView,
-//            emailTextfield
+            backgroundView,
+            vcNameLabel,
+            
+            emailLabel,
+            emailTextfield,
+            
+            passwordLabel,
+            passwordTextfield,
+            
+            rePasswordLabel,
+            rePasswordTextfield
         )
         
     }
@@ -79,9 +98,44 @@ final class SignupVC: BaseVC {
             $0.top.equalTo(self.backgroundView.snp.top).offset(35)
             $0.centerX.equalToSuperview()
         }
-//        emailLabel.snp.makeConstraints {
-//            
-//        }
+        emailLabel.snp.makeConstraints {
+            $0.top.equalTo(vcNameLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(32)
+        }
+        emailTextfield.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.top.equalTo(emailLabel.snp.bottom).offset(4)
+            $0.leading.trailing.equalToSuperview().inset(32)
+        }
+        passwordLabel.snp.makeConstraints {
+            $0.top.equalTo(emailTextfield.snp.bottom).offset(22)
+            $0.leading.equalTo(emailLabel)
+        }
+        passwordTextfield.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.top.equalTo(passwordLabel.snp.bottom).offset(4)
+            $0.leading.trailing.equalToSuperview().inset(32)
+        }
+        rePasswordLabel.snp.makeConstraints {
+            $0.top.equalTo(passwordTextfield.snp.bottom).offset(22)
+            $0.leading.equalTo(emailLabel)
+        }
+        rePasswordTextfield.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.top.equalTo(rePasswordLabel.snp.bottom).offset(4)
+            $0.leading.trailing.equalToSuperview().inset(32)
+        }
     }
     
+}
+
+extension SignupVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
