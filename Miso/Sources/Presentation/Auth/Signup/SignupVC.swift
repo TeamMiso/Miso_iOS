@@ -6,13 +6,6 @@ final class SignupVC: BaseVC {
         $0.image = UIImage(named: "SignupBackground")
     }
     
-    private let misoLabel = UILabel().then {
-        $0.text = "\"미소\""
-        $0.textColor = UIColor(rgb: 0xFAFAFA)
-        $0.textAlignment = .center
-        $0.font = .Miso(size: 24, family: .extraLight)
-    }
-    
     private let backgroundView = UIView().then {
         $0.backgroundColor = UIColor(rgb: 0xE5F0EC)
         $0.layer.cornerRadius = 30
@@ -97,7 +90,6 @@ final class SignupVC: BaseVC {
     override func addView() {
         view.addSubviews(
             backgroundImageView,
-            misoLabel,
             backgroundView,
             vcNameLabel,
             
@@ -121,13 +113,9 @@ final class SignupVC: BaseVC {
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        misoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(22)
-            $0.centerX.equalToSuperview()
-        }
         backgroundView.snp.makeConstraints {
-            $0.top.equalTo(misoLabel.snp.bottom).offset(24)
             $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(81)
         }
         vcNameLabel.snp.makeConstraints {
             $0.top.equalTo(self.backgroundView.snp.top).offset(35)
