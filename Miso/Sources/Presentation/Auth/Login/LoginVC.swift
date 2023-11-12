@@ -59,7 +59,6 @@ final class LoginVC: BaseVC {
     private let getAuthNumberButton = NextStepButton().then {
         $0.setTitle("로그인", for: .normal)
         $0.isEnabled = false
-        
 //        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
