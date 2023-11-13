@@ -108,8 +108,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCell.identifier, for: indexPath)
         
         if let cell = cell as? OptionCell {
-            cell.mainImageView.image = UIImage(named: option[indexPath.item].mainImageName)!
-            cell.subImageView.image = UIImage(named: option[indexPath.item].subImageName)!
+            cell.mainImageView.image = UIImage(named: option[indexPath.item].mainImageName)
+            cell.subImageView.image = UIImage(named: option[indexPath.item].subImageName)
             cell.mainTitleLabel.text = option[indexPath.item].mainTitle
             cell.subTitleLabel.text = option[indexPath.item].subTitle
             cell.explainLabel.text = option[indexPath.item].explain
