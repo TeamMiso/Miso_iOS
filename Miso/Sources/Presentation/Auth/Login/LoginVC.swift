@@ -1,6 +1,15 @@
 import UIKit
+import RxFlow
+import RxCocoa
 
-final class LoginVC: BaseVC {
+
+final class LoginVC: BaseVC, Stepper {
+    
+    var steps = PublishRelay<Step>()
+    
+    var initialStep: Step {
+        DemoStep.loginIsRequired
+    }
     
     private let backgroundImageView = UIImageView().then {
         $0.image = UIImage(named: "LoginBackground")

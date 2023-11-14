@@ -1,8 +1,12 @@
 import UIKit
 import Then
 import SnapKit
+import RxFlow
+import RxCocoa
 
-final class MainVC: BaseVC {
+final class MainVC: BaseVC, Stepper{
+    
+    var steps = PublishRelay<Step>()
     
     var option: [OptionEntity] = [
         OptionEntity(mainImageName: "RegisterRecycle", subImageName: "Camera", mainTitle: "재활용 등록하기.", subTitle: "Camera.", explain: "사진 촬영으로 재활용하는\n방법을 알아보자."),
@@ -108,8 +112,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OptionCell.identifier, for: indexPath)
         
         if let cell = cell as? OptionCell {
-            cell.mainImageView.image = UIImage(named: option[indexPath.item].mainImageName)!
-            cell.subImageView.image = UIImage(named: option[indexPath.item].subImageName)!
+            cell.mainImageView.image = UIImage(named: option[indexPath.item].mainImageName)
+            cell.subImageView.image = UIImage(named: option[indexPath.item].subImageName)
             cell.mainTitleLabel.text = option[indexPath.item].mainTitle
             cell.subTitleLabel.text = option[indexPath.item].subTitle
             cell.explainLabel.text = option[indexPath.item].explain

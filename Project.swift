@@ -32,6 +32,10 @@ let project = Project(
         .package(
             url: "https://github.com/uuuunseo/AEOTPTextField.git",
             .upToNextMajor(from: "1.0.0")
+        ),
+        .package(
+            url: "https://github.com/RxSwiftCommunity/RxFlow.git",
+           .upToNextMajor(from: "2.10.0")
         )
     ],
     settings: nil,
@@ -52,7 +56,8 @@ let project = Project(
                 .package(product: "RxKeyboard"),
                 .package(product: "Then"),
                 .package(product: "RxSwift"),
-                .package(product: "AEOTPTextField")
+                .package(product: "AEOTPTextField"),
+                .package(product: "RxFlow")
             ]
         )
     ],

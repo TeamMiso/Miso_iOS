@@ -21,14 +21,18 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum MisoAsset {
   public static let accentColor = MisoColors(name: "AccentColor")
+  public static let camera = MisoImages(name: "Camera")
+  public static let exchangePoint = MisoImages(name: "ExchangePoint")
+  public static let inquire = MisoImages(name: "Inquire")
   public static let lock = MisoImages(name: "Lock")
   public static let loginBackground = MisoImages(name: "LoginBackground")
+  public static let logo = MisoImages(name: "Logo")
   public static let mail = MisoImages(name: "Mail")
-  public static let rectangle2069 = MisoImages(name: "Rectangle 2069")
-  public static let rectangle2079 = MisoImages(name: "Rectangle 2079")
-  public static let rectangle2080 = MisoImages(name: "Rectangle 2080")
-  public static let rectangle2081 = MisoImages(name: "Rectangle 2081")
-  public static let signinBackground = MisoImages(name: "SigninBackground")
+  public static let market = MisoImages(name: "Market")
+  public static let registerRecycle = MisoImages(name: "RegisterRecycle")
+  public static let signupBackground = MisoImages(name: "SignupBackground")
+  public static let watchRequestHistory = MisoImages(name: "WatchRequestHistory")
+  public static let write = MisoImages(name: "Write")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
