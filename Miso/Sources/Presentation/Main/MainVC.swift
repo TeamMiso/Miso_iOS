@@ -1,8 +1,12 @@
 import UIKit
 import Then
 import SnapKit
+import RxFlow
+import RxCocoa
 
-final class MainVC: BaseVC {
+final class MainVC: BaseVC, Stepper{
+    
+    var steps = PublishRelay<Step>()
     
     var option: [OptionEntity] = [
         OptionEntity(mainImageName: "RegisterRecycle", subImageName: "Camera", mainTitle: "재활용 등록하기.", subTitle: "Camera.", explain: "사진 촬영으로 재활용하는\n방법을 알아보자."),

@@ -46,6 +46,15 @@
       }
     },
     {
+      "identity" : "rxflow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxFlow.git",
+      "state" : {
+        "revision" : "d8d4e53d05239f1ec1bd8bec173907868afa0fa1",
+        "version" : "2.13.0"
+      }
+    },
+    {
       "identity" : "rxkeyboard",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxKeyboard.git",
