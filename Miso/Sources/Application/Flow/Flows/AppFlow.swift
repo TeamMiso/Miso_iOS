@@ -21,20 +21,26 @@ class AppFlow: Flow {
         switch step {
         case .mainIsRequired:
             return navigateToMain()
-        case .loginIsRequired
+        case .loginIsRequired:
+            return navigateToLogin()
         }
     }
     
     private func navigateToMain() -> FlowContributors {
-        let vc = MainVC()
-        
+        let mainFlow = MainFlow()
+        Flows.use(mainFlow, when: .created) { (root) in
+            self.window.rootViewController = root
+        }
+        return .one(
+            flowContributor: .contribute(withNextPresentable: mainFlow, withNextStepper: OneStepper(withSingleStep: DemoStep.loginIsRequired)))
         
     }
     
     private func navigateToLogin() -> FlowContributors {
-        let vc = LoginVC()
-        
+        let loginFlow = LoginFlow()
+        Flows.use(loginFlow, when: .created) { (root) in
+            self.window.rootViewController = root
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: loginFlow, withNextStepper: OneStepper(withSingleStep: DemoStep.loginIsRequired)))
     }
-    
-    
 }
