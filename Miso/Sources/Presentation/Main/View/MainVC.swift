@@ -4,7 +4,7 @@ import SnapKit
 import RxFlow
 import RxCocoa
 
-final class MainVC: BaseVC, Stepper{
+final class MainVC: BaseVC, Stepper {
     
     var steps = PublishRelay<Step>()
     
@@ -51,7 +51,6 @@ final class MainVC: BaseVC, Stepper{
         $0.minimumLineSpacing = 40
     }
     
-    
     override func setup() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -97,12 +96,14 @@ final class MainVC: BaseVC, Stepper{
             $0.leading.trailing.equalToSuperview()
         }
     }
+    
+    
+    
 }
  
     
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return option.count
@@ -125,6 +126,17 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
+    // MARK: - 클릭된 cell의 번째를 알려주는 메서드
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("Selected cell at index: \(indexPath.item)")
+
+//        if indexPath.item == 0 {
+//
+//        }
+    }
+    
 }
 
 
