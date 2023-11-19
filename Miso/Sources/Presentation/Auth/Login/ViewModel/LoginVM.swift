@@ -4,7 +4,7 @@ import RxCocoa
 import RxSwift
 import Moya
 
-class LoginViewModel: BaseViewModel, Stepper{
+class LoginVM: BaseVM, Stepper{
     struct Input {
         
     }
