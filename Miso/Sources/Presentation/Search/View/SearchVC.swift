@@ -1,6 +1,6 @@
 import UIKit
 
-final class SearchVC: BaseVC {
+final class SearchVC: BaseVC<Any> {
     
     override func setup() {
         self.navigationController?.navigationBar.topItem?.title = ""
