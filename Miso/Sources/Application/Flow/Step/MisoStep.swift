@@ -1,8 +1,11 @@
-//
-//  MisoStep.swift
-//  Miso
-//
-//  Created by 박준서 on 11/19/23.
-//
+import RxFlow
+import UIKit
 
-import Foundation
+enum MisoStep: Step {
+    
+    // MARK: - Auth
+    case loginIsRequired
+    
+    // MARK: - <#title#>
+    
+}
