@@ -4,7 +4,7 @@ import RxCocoa
 import RxFlow
 import Moya
 
-class BaseViewModel{
+class BaseVM {
     var disposeBag = DisposeBag()
     var steps = PublishRelay<Step>()
 //    let keychain = Keychain()
