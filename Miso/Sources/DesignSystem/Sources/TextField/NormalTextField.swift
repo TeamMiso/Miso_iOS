@@ -12,7 +12,6 @@ public final class NormalTextField: UITextField{
         super.init(coder: coder)
     }
     
-    
 
     func setupView() {
         backgroundColor = UIColor(rgb: 0xFAFAFA)

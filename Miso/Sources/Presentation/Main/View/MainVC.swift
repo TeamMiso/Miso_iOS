@@ -3,9 +3,10 @@ import Then
 import SnapKit
 import RxFlow
 import RxCocoa
+import RxSwift
 
-final class MainVC: BaseVC, Stepper {
-    
+final class MainVC: BaseVC<MainReactor>, Stepper {
+
     var steps = PublishRelay<Step>()
     
     var option: [OptionEntity] = [
@@ -22,7 +23,7 @@ final class MainVC: BaseVC, Stepper {
         $0.font = .Miso(size: 20, family: .light)
     }
     
-    private let gotoSignupButton = UIButton().then {
+    private let searchButton = UIButton().then {
         $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         $0.tintColor = UIColor(rgb: 0x0F0F0F)
     }
@@ -64,11 +65,16 @@ final class MainVC: BaseVC, Stepper {
     override func addView() {
         view.addSubviews(
             misoLabel,
-            gotoSignupButton,
+            searchButton,
             logoutButton,
             menuLabel,
             collectionView
         )
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindView(reactor: MainReactor())
     }
     
     override func setLayout() {
@@ -76,7 +82,7 @@ final class MainVC: BaseVC, Stepper {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(18)
             $0.leading.equalToSuperview().offset(15)
         }
-        gotoSignupButton.snp.makeConstraints {
+        searchButton.snp.makeConstraints {
             $0.height.width.equalTo(24)
             $0.top.equalTo(misoLabel.snp.top)
             $0.trailing.equalTo(logoutButton.snp.leading).offset(-22)
@@ -96,6 +102,17 @@ final class MainVC: BaseVC, Stepper {
             $0.leading.trailing.equalToSuperview()
         }
     }
+    
+    
+    // MARK: - Reactor
+    override func bindView(reactor: MainReactor) {
+        searchButton.rx.tap
+            .map{ MainReactor.Action.searchButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    
+    
     
     
     

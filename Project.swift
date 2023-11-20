@@ -27,6 +27,10 @@ let project = Project(
             url: "https://github.com/devxoul/Then",
             requirement: .upToNextMajor(from: "2")
         ),
+        .remote(
+            url: "https://github.com/ReactorKit/ReactorKit.git",
+            requirement: .upToNextMajor(from: "3.0.0")
+        ),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.6.0")
         ),
         .package(
@@ -50,14 +54,16 @@ let project = Project(
             sources: ["\(projectName)/Sources/**"],
             resources: ["\(projectName)/Resources/**"],
             dependencies: [
+                .package(product: "RxFlow"),
+                .package(product: "RxSwift"),
+                .package(product: "RxCocoa"),
+                .package(product: "RxKeyboard"),
                 .package(product: "IQKeyboardManagerSwift"),
                 .package(product: "SnapKit"),
                 .package(product: "Moya"),
-                .package(product: "RxKeyboard"),
                 .package(product: "Then"),
-                .package(product: "RxSwift"),
                 .package(product: "AEOTPTextField"),
-                .package(product: "RxFlow")
+                .package(product: "ReactorKit")
             ]
         )
     ],
