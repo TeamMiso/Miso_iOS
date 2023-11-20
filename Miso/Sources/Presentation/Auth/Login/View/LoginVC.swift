@@ -3,12 +3,12 @@ import RxFlow
 import RxCocoa
 
 
-final class LoginVC: BaseVC<LoginViewModel> {
+final class LoginVC: BaseVC<LoginVM> {
     
     var steps = PublishRelay<Step>()
     
     var initialStep: Step {
-        DemoStep.loginIsRequired
+        MisoStep.loginIsRequired
     }
     
     private let backgroundImageView = UIImageView().then {
