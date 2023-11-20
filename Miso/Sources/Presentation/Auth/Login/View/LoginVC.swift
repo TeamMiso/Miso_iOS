@@ -3,7 +3,7 @@ import RxFlow
 import RxCocoa
 
 
-final class LoginVC: BaseVC, Stepper {
+final class LoginVC: BaseVC<LoginViewModel> {
     
     var steps = PublishRelay<Step>()
     
