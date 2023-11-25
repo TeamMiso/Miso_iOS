@@ -14,7 +14,7 @@ extension UIFont {
              heavy = "Heavy"
     }
     
-    static func Miso(size: CGFloat, family: Family) -> UIFont! {
+    static func miso(size: CGFloat, family: Family) -> UIFont! {
         return UIFont(name: "SUITv1-\(family.rawValue)", size: size)
     }
 }
