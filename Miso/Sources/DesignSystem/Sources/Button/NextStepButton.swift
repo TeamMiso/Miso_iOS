@@ -13,7 +13,7 @@ public final class NextStepButton: UIButton{
     }
     
     func setupView(){
-        titleLabel?.font = .Miso(size: 20, family: .extraLight)
+        titleLabel?.font = .miso(size: 20, family: .extraLight)
         setTitleColor(UIColor(rgb: 0xE5F0EC), for: .normal)
         layer.cornerRadius = 5
         clipsToBounds = true

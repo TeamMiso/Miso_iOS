@@ -8,7 +8,7 @@ final class SearchVC: BaseVC<Any> {
     
     private let searchTextField = UITextField().then {
         $0.placeholder = ""
-        $0.font = .Miso(size: 16, family: .extraLight)
+        $0.font = .miso(size: 16, family: .extraLight)
     }
     
     private let searchButton = UIButton().then {
@@ -19,7 +19,7 @@ final class SearchVC: BaseVC<Any> {
     private let recentSearchesLabel = UILabel().then {
         $0.text = "최근 검색어"
         $0.textColor = UIColor(rgb: 0x000000)
-        $0.font = .Miso(size: 14, family: .extraLight)
+        $0.font = .miso(size: 14, family: .extraLight)
     }
     
     

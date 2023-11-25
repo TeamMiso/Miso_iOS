@@ -12,12 +12,12 @@ final class OptionCell: UICollectionViewCell {
     
     var mainTitleLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xFAFAFA)
-        $0.font = .Miso(size: 20, family: .extraLight)
+        $0.font = .miso(size: 20, family: .extraLight)
     }
     
     var subTitleLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xD0DDD7)
-        $0.font = .Miso(size: 15, family: .extraLight)
+        $0.font = .miso(size: 15, family: .extraLight)
     }
     
     private let betweenView = UIView().then {
@@ -26,7 +26,7 @@ final class OptionCell: UICollectionViewCell {
     
     var explainLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xFFFFFF)
-        $0.font = .Miso(size: 20, family: .extraLight)
+        $0.font = .miso(size: 20, family: .extraLight)
         $0.numberOfLines = 0
     }
     
