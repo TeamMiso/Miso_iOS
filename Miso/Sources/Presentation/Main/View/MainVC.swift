@@ -20,7 +20,7 @@ final class MainVC: BaseVC<MainReactor>, Stepper {
         $0.text = "\"미소\""
         $0.textColor = UIColor(rgb: 0x1C1C1E)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 20, family: .light)
+        $0.font = .miso(size: 20, family: .light)
     }
     
     private let searchButton = UIButton().then {
@@ -37,7 +37,7 @@ final class MainVC: BaseVC<MainReactor>, Stepper {
         $0.text = "메뉴"
         $0.textColor = UIColor(rgb: 0x1C1C1E)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 25, family: .extraLight)
+        $0.font = .miso(size: 25, family: .extraLight)
     }
     
     lazy var collectionView: UICollectionView = {

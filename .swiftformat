@@ -1,0 +1,13 @@
+--swiftversion 5.0
+
+# format options
+--indent 4
+--self init-only
+--commas inline
+--trimwhitespace nonblank-lines
+--hexliteralcase lowercase
+
+# file options
+--exclude Pods, TimeCamera/AppDelegate.swift, TimeCamera/SceneDelegate.swift
+
+# rules

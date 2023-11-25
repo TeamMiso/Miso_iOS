@@ -16,7 +16,7 @@ public final class SecureTextField: UITextField {
     
     func setupView() {
         backgroundColor = UIColor(rgb: 0xFAFAFA)
-        font = .Miso(size: 13, family: .extraLight)
+        font = .miso(size: 13, family: .extraLight)
         setPlaceholderColor(UIColor(rgb: 0x808080))
         
         isSecureTextEntry = true

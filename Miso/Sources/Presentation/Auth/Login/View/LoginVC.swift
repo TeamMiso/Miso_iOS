@@ -23,7 +23,7 @@ final class LoginVC: BaseVC<LoginVM> {
         $0.text = "\"미소\""
         $0.textColor = UIColor(rgb: 0xFAFAFA)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 24, family: .extraLight)
+        $0.font = .miso(size: 24, family: .extraLight)
     }
     
     private let backgroundView = UIView().then {
@@ -36,14 +36,14 @@ final class LoginVC: BaseVC<LoginVM> {
         $0.text = "Log In"
         $0.textColor = UIColor(rgb: 0x416A36)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 30, family: .extraLight)
+        $0.font = .miso(size: 30, family: .extraLight)
     }
     
     private let emailLabel = UILabel().then {
         $0.text = "Email"
         $0.textColor = UIColor(rgb: 0x292929)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 13, family: .extraLight)
+        $0.font = .miso(size: 13, family: .extraLight)
     }
     
     private let emailTextfield = NormalTextField(placeholder: "  이메일을 입력해주세요").then {
@@ -56,7 +56,7 @@ final class LoginVC: BaseVC<LoginVM> {
         $0.text = "Password"
         $0.textColor = UIColor(rgb: 0x292929)
         $0.textAlignment = .center
-        $0.font = .Miso(size: 13, family: .extraLight)
+        $0.font = .miso(size: 13, family: .extraLight)
     }
     
     private let passwordTextfield = SecureTextField(placeholder: "  비밀번호를 입력해주세요").then {
@@ -74,12 +74,12 @@ final class LoginVC: BaseVC<LoginVM> {
     private let accountAskLabel = UILabel().then {
         $0.text = "계정이 없으신가요?"
         $0.textColor = UIColor(rgb: 0x808080)
-        $0.font = .Miso(size: 12, family: .extraLight)
+        $0.font = .miso(size: 12, family: .extraLight)
     }
     
     private let gotoSignupButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
-        $0.titleLabel?.font = .Miso(size: 12, family: .light)
+        $0.titleLabel?.font = .miso(size: 12, family: .light)
         $0.setTitleColor(UIColor(rgb: 0x81A895), for: .normal)
     }
     
