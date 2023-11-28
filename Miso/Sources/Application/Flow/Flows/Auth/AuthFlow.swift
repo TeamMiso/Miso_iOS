@@ -2,18 +2,17 @@ import RxFlow
 import UIKit
 
 class AuthFlow: Flow {
-    
     var root: Presentable {
-        return self.rootViewController
+        return rootViewController
     }
-    
+
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
         return viewController
     }()
-    
-    init(){}
-    
+
+    init() {}
+
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? MisoStep else { return .none }
         switch step {
@@ -23,16 +22,13 @@ class AuthFlow: Flow {
             return .none
         }
     }
-    
 }
 
 private extension AuthFlow {
-    
     func coordinateToLogin() -> FlowContributors {
         let vm = LoginVM()
         let vc = LoginVC(vm)
-        self.rootViewController.pushViewController(vc, animated: true)
+        rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
-    
 }

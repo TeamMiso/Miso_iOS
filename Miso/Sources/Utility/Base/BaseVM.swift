@@ -1,8 +1,8 @@
-import UIKit
-import RxSwift
+import Moya
 import RxCocoa
 import RxFlow
-import Moya
+import RxSwift
+import UIKit
 
 class BaseVM {
     var disposeBag = DisposeBag()
@@ -11,4 +11,3 @@ class BaseVM {
 //    let gomsRefreshToken = GOMSRefreshToken.shared
 //    lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
 }
-

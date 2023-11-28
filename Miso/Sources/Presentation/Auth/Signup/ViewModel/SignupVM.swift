@@ -1,21 +1,13 @@
 import Foundation
-import RxFlow
-import RxCocoa
-import RxSwift
 import Moya
+import RxCocoa
+import RxFlow
+import RxSwift
 
-class SignVM: BaseVM, Stepper{
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    func transVC(input: Input) {
-    }
+class SignVM: BaseVM, Stepper {
+    struct Input {}
 
+    struct Output {}
+
+    func transVC(input _: Input) {}
 }
-
-
