@@ -1,56 +1,53 @@
-import UIKit
 import SnapKit
 import Then
+import UIKit
 
 final class OptionCell: UICollectionViewCell {
-    
     static let identifier = "OptionCell"
-    
+
     var mainImageView = UIImageView()
-    
+
     var subImageView = UIImageView()
-    
+
     var mainTitleLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xFAFAFA)
         $0.font = .miso(size: 20, family: .extraLight)
     }
-    
+
     var subTitleLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xD0DDD7)
         $0.font = .miso(size: 15, family: .extraLight)
     }
-    
+
     private let betweenView = UIView().then {
         $0.backgroundColor = UIColor(rgb: 0xD0DDD7)
     }
-    
+
     var explainLabel = UILabel().then {
         $0.textColor = UIColor(rgb: 0xFFFFFF)
         $0.font = .miso(size: 20, family: .extraLight)
         $0.numberOfLines = 0
     }
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setup()
         addViews()
         setLayout()
-        
     }
-    
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setup() {
         backgroundColor = UIColor(rgb: 0x81A895)
         layer.cornerRadius = 10
         layer.masksToBounds = true
     }
-    
+
     func addViews() {
         addSubviews(
             mainImageView,
@@ -61,7 +58,7 @@ final class OptionCell: UICollectionViewCell {
             explainLabel
         )
     }
-    
+
     func setLayout() {
         mainImageView.snp.makeConstraints {
             $0.height.equalTo(230)
@@ -90,6 +87,4 @@ final class OptionCell: UICollectionViewCell {
             $0.leading.equalTo(subImageView.snp.leading)
         }
     }
-    
-    
 }

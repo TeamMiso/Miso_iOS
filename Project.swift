@@ -31,16 +31,15 @@ let project = Project(
             url: "https://github.com/ReactorKit/ReactorKit.git",
             requirement: .upToNextMajor(from: "3.0.0")
         ),
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.6.0")
-        ),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.6.0")),
         .package(
             url: "https://github.com/uuuunseo/AEOTPTextField.git",
             .upToNextMajor(from: "1.0.0")
         ),
         .package(
             url: "https://github.com/RxSwiftCommunity/RxFlow.git",
-           .upToNextMajor(from: "2.10.0")
-        )
+            .upToNextMajor(from: "2.10.0")
+        ),
     ],
     settings: nil,
     targets: [
@@ -63,12 +62,11 @@ let project = Project(
                 .package(product: "Moya"),
                 .package(product: "Then"),
                 .package(product: "AEOTPTextField"),
-                .package(product: "ReactorKit")
+                .package(product: "ReactorKit"),
             ]
-        )
+        ),
     ],
     fileHeaderTemplate: nil,
     additionalFiles: [],
-    resourceSynthesizers:  .default
+    resourceSynthesizers: .default
 )
-

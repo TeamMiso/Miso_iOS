@@ -9,7 +9,7 @@ extension UIColor {
             alpha: CGFloat(alpha) / 255.0
         )
     }
-    
+
     convenience init(rgb: Int) {
         self.init(
             red: (rgb >> 16) & 0xFF,
@@ -17,7 +17,7 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
-    
+
     convenience init(argb: Int) {
         self.init(
             red: (argb >> 16) & 0xFF,

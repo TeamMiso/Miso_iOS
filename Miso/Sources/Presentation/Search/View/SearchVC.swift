@@ -1,39 +1,36 @@
 import UIKit
 
 final class SearchVC: BaseVC<Any> {
-    
     private let betweenView = UIView().then {
         $0.backgroundColor = UIColor(rgb: 0x1C1C1E)
     }
-    
+
     private let searchTextField = UITextField().then {
         $0.placeholder = ""
         $0.font = .miso(size: 16, family: .extraLight)
     }
-    
+
     private let searchButton = UIButton().then {
         $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         $0.tintColor = UIColor(rgb: 0x1C1C1E)
     }
-    
+
     private let recentSearchesLabel = UILabel().then {
         $0.text = "최근 검색어"
         $0.textColor = UIColor(rgb: 0x000000)
         $0.font = .miso(size: 14, family: .extraLight)
     }
-    
-    
-    
+
     override func setup() {
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x1C1C1E)
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x1C1C1E)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
-    
+
     override func addView() {
         view.addSubviews(
             betweenView,
@@ -42,7 +39,7 @@ final class SearchVC: BaseVC<Any> {
             recentSearchesLabel
         )
     }
-    
+
     override func setLayout() {
         searchButton.snp.makeConstraints {
             $0.height.width.equalTo(24)
@@ -65,7 +62,4 @@ final class SearchVC: BaseVC<Any> {
             $0.leading.equalToSuperview().offset(22)
         }
     }
-    
-    
-    
 }

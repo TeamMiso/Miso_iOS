@@ -1,122 +1,120 @@
 import UIKit
 
 final class SignupVC: BaseVC<SignVM> {
-    
     private let backgroundImageView = UIImageView().then {
         $0.image = UIImage(named: "SignupBackground")
     }
-    
+
     private let misoLabel = UILabel().then {
         $0.text = "\"미소\""
         $0.textColor = UIColor(rgb: 0xFAFAFA)
         $0.textAlignment = .center
         $0.font = .miso(size: 24, family: .extraLight)
     }
-    
+
     private let backgroundView = UIView().then {
         $0.backgroundColor = UIColor(rgb: 0xE5F0EC)
         $0.layer.cornerRadius = 30
         $0.layer.masksToBounds = true
     }
-    
+
     private let vcNameLabel = UILabel().then {
         $0.text = "Sign Up"
         $0.textColor = UIColor(rgb: 0x416A36)
         $0.textAlignment = .center
         $0.font = .miso(size: 30, family: .extraLight)
     }
-    
+
     private let emailLabel = UILabel().then {
         $0.text = "Email"
         $0.textColor = UIColor(rgb: 0x292929)
         $0.textAlignment = .center
         $0.font = .miso(size: 13, family: .extraLight)
     }
-    
+
     private let emailTextfield = NormalTextField(placeholder: "  이메일을 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
     }
-    
+
     private let passwordLabel = UILabel().then {
         $0.text = "Password"
         $0.textColor = UIColor(rgb: 0x292929)
         $0.textAlignment = .center
         $0.font = .miso(size: 13, family: .extraLight)
     }
-    
+
     private let passwordTextfield = SecureTextField(placeholder: "  비밀번호를 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
     }
-    
+
     private let rePasswordLabel = UILabel().then {
         $0.text = "RePassword"
         $0.textColor = UIColor(rgb: 0x292929)
         $0.textAlignment = .center
         $0.font = .miso(size: 13, family: .extraLight)
     }
-    
+
     private let rePasswordTextfield = SecureTextField(placeholder: "  비밀번호를 다시 입력해주세요").then {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
         $0.backgroundColor = UIColor(rgb: 0xFFFFFF)
     }
-    
+
     private let getAuthNumberButton = NextStepButton().then {
         $0.setTitle("인증번호받기", for: .normal)
         $0.isEnabled = false
-        
+
 //        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    
+
     private let accountAskLabel = UILabel().then {
         $0.text = "계정이 있으신가요?"
         $0.textColor = UIColor(rgb: 0x808080)
         $0.font = .miso(size: 12, family: .extraLight)
     }
-    
+
     private let gotoLoginButton = UIButton().then {
         $0.setTitle("로그인", for: .normal)
         $0.titleLabel?.font = .miso(size: 12, family: .light)
         $0.setTitleColor(UIColor(rgb: 0x81A895), for: .normal)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func setup() {
         emailTextfield.delegate = self
         passwordTextfield.delegate = self
         rePasswordTextfield.delegate = self
     }
-    
+
     override func addView() {
         view.addSubviews(
             backgroundImageView,
             misoLabel,
             backgroundView,
             vcNameLabel,
-            
+
             emailLabel,
             emailTextfield,
-            
+
             passwordLabel,
             passwordTextfield,
-            
+
             rePasswordLabel,
             rePasswordTextfield,
-            
+
             getAuthNumberButton,
             accountAskLabel,
             gotoLoginButton
         )
-        
     }
-    
+
     override func setLayout() {
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -175,11 +173,9 @@ final class SignupVC: BaseVC<SignVM> {
             $0.leading.equalTo(accountAskLabel.snp.trailing).offset(4)
         }
     }
-    
 }
 
 extension SignupVC: UITextFieldDelegate {
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextfield {
             emailTextfield.layer.borderColor = UIColor(rgb: 0x4C53FF).cgColor
@@ -192,7 +188,7 @@ extension SignupVC: UITextFieldDelegate {
             rePasswordTextfield.layer.borderWidth = 1
         }
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == emailTextfield {
             emailTextfield.layer.borderWidth = 0
@@ -202,8 +198,7 @@ extension SignupVC: UITextFieldDelegate {
             rePasswordTextfield.layer.borderWidth = 0
         }
     }
-    
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
