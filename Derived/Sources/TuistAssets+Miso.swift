@@ -22,6 +22,7 @@
 public enum MisoAsset {
   public static let accentColor = MisoColors(name: "AccentColor")
   public static let camera = MisoImages(name: "Camera")
+  public static let candy = MisoImages(name: "Candy")
   public static let exchangePoint = MisoImages(name: "ExchangePoint")
   public static let inquire = MisoImages(name: "Inquire")
   public static let lock = MisoImages(name: "Lock")
