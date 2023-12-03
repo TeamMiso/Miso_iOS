@@ -1,8 +1,13 @@
-//
-//  ItemPurchaseVM.swift
-//  Miso
-//
-//  Created by 박준서 on 12/3/23.
-//
-
 import Foundation
+import Moya
+import RxCocoa
+import RxFlow
+import RxSwift
+
+class ItemPurchaseVM: BaseVM, Stepper {
+    struct Input {}
+
+    struct Output {}
+
+    func transVC(input _: Input) {}
+}
