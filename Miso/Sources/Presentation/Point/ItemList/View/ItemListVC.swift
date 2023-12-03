@@ -1,6 +1,7 @@
 import UIKit
+import Kingfisher
 
-final class ItemListVC: BaseVC<PointVM> {
+final class ItemListVC: BaseVC<ItemListVM> {
     var productList: [ProductEntity] = [
         ProductEntity(id: 3_241_413, price: 150, amount: 3, name: "막대사탕", imageUrl: "Candy"),
         ProductEntity(id: 3_241_413, price: 150, amount: 3, name: "막대사탕", imageUrl: "Candy"),
