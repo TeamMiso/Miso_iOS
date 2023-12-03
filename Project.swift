@@ -40,6 +40,10 @@ let project = Project(
             url: "https://github.com/RxSwiftCommunity/RxFlow.git",
             .upToNextMajor(from: "2.10.0")
         ),
+        .package(
+            url: "https://github.com/onevcat/Kingfisher.git",
+            .upToNextMajor(from: "7.10.0")
+        ),
     ],
     settings: nil,
     targets: [
@@ -63,6 +67,7 @@ let project = Project(
                 .package(product: "Then"),
                 .package(product: "AEOTPTextField"),
                 .package(product: "ReactorKit"),
+                .package(product: "Kingfisher"),
             ]
         ),
     ],
